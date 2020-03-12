@@ -3,7 +3,8 @@
     let tab_containers = null;
     let tab_buttons = null;
     let tab_selected = null;
-
+    let day_select_list = null;
+    
     /**
      * Hide tab containers
      * @returns void;
@@ -130,8 +131,7 @@
         tab_containers = get_element_by_class("tab-element");
         tab_buttons = get_element_by_class("tab-selector-button");
         tab_selected = get_element_by_id('date-picker');
-
-        const day_select_list = get_element_by_id('day');
+        day_select_list = get_element_by_id('day');
 
         // Set hidden states of tab containers
         hide_tab_containers();
