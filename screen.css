@@ -1,0 +1,24 @@
+#tab-list li{
+    float:left;
+    width: auto;
+    list-style: none;
+    margin-right: 20px;
+}
+
+#tab-list li>a{
+    padding:10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#tab-list li>a.active{
+    background-color: aqua;
+}
+
+
+.tab-element{
+    width: 100%;
+    clear: both;
+    padding: 20px;
+    display: none;
+}
