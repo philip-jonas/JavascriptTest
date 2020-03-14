@@ -6,15 +6,49 @@
         <link rel="stylesheet" type="text/css" href="screen.css">
     </head>
     <body>
-        <form>
 
+        <div>
+            <h2>DOM TEST 1 <sup>./tests/dom.js</sup></h2>
+
+            <h4>DOM MINIPULATION SPEED TESTS</h4>
+
+            <div class="spacer"></div>
+
+            <p>Here we are populating a select list with 300 select options using 3 different methods</p>
+
+            <select id="datalist"></select>
+
+            <div class="spacer"></div>
+            <blockquote>
+                <p>
+                    <strong>METHOD 1</strong>: This is the slowest method of the 3. It is unsing array map to add innerHtml on every itteration. This is a no go because you are minipulating the dom on every loop. This uses alot of client system pefromce. This is a small test but takes 230ms +- to complete. Anything more than 500 and the browser tends to freeze.
+                </p>
+                <button id="slowVersion">SLOW VERSION</button>
+            </blockquote>
+
+            <blockquote>
+                <p>
+                    <strong>METHOD 2</strong>: One of 2 methods used to minipulate the dome in under 2ms. What we are doing here is building up a string and then adding it as innerHtml in 1 call to the document element. This is far more efficient as it requires 1 call to minipulate the dom element.
+                </p>
+                <button id="fastVersion">FAST VERSION</button>
+            </blockquote>
+
+            <blockquote>
+                <p>
+                    <strong>METHOD 3</strong>: Almost identical to the first one in that we minipulate the dom once, however we are building up a document fragment. Because we are not interfacing with the document and because its not part of an document tree it incurrs 0 peformance impact on the document.
+                </p>
+                <button id="fragVersion">FRAG VERSION</button>
+            </blockquote>
+
+        </div>
+        
+        
+        <form>
+            <h2>DOM Minipulation <sup>./tests/form_test.js</sup></h2>
             <ul id="tab-list">
                 <li><button class="tab-selector-button" value="days-of-the-week">Days of the week</button></li>
                 <li><button class="tab-selector-button" value="date-picker">Date Picker</button></li>
                 <li><button class="tab-selector-button" value="user-input">User Input</button></li>
-                <!-- <li><a class="tab-selector" id="days_of_the_week" data-ref="days-of-the-week" href="#">Days of the week</a></li> -->
-                <!-- <li><a class="tab-selector" id="date_picker" data-ref="date-picker" href="#">date Picker</a></li> -->
-                <!-- <li><a class="tab-selector" id="user_input" data-ref="user-input" href="#">User Input</a></li> -->
             </ul>
 
             <div class="tab-element" id="days-of-the-week"> 
@@ -52,5 +86,7 @@
         </form>
     </body>
 
-    <script src="main.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./tests/form_test.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./tests/person.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./tests/dom.js" type="text/javascript" charset="utf-8"></script>
 </html>
