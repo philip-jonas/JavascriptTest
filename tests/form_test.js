@@ -3,7 +3,8 @@
     let tab_containers = null;
     let tab_buttons = null;
     let tab_selected = null;
-
+    let day_select_list = null;
+    
     /**
      * Hide tab containers
      * @returns void;
@@ -39,7 +40,7 @@
                 tab_selected.style.display = 'none';
             }
 
-            tab_selected = document.getElementById(tab_id);
+            tab_selected = get_element_by_id(tab_id);
             tab_selected.style.display = 'block';
         }
     }
@@ -69,7 +70,7 @@
      * @param {Function} callback 
      */
     const add_event_listenener = (event_action, target_listener, callback) => {
-        const elements = document.getElementsByClassName(target_listener);
+        const elements = get_element_by_class(target_listener);
         for(let i = 0; i < elements.length; i ++){
             elements[i].addEventListener(event_action, (event) => {
                 callback(event);
@@ -130,8 +131,7 @@
         tab_containers = get_element_by_class("tab-element");
         tab_buttons = get_element_by_class("tab-selector-button");
         tab_selected = get_element_by_id('date-picker');
-
-        const day_select_list = get_element_by_id('day');
+        day_select_list = get_element_by_id('day');
 
         // Set hidden states of tab containers
         hide_tab_containers();
